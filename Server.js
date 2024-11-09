@@ -7,7 +7,10 @@ app.listen(8000 , () => {
 
 app.get( '/' , (request , responce ) => {
     responce.send("Hello ji Kaise ho Sare ")
-});
+}); 
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 app.post('/api/cars' , ( request , responce ) => {
     
