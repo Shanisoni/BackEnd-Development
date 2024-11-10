@@ -19,4 +19,13 @@ app.post('/api/cars' , ( request , responce ) => {
     responce.send("Data Recived");
 });
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost::27017//Shani DataBase' ,{
+    useNewUrlParser : true ,
+    useUnifiedTopology : true
+
+})
+.then( () => {console.log("Conenction Successful")} )
+.catch( (error) => {console.log("Conection Failed ")})
+
  
