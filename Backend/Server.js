@@ -20,7 +20,7 @@ app.post('/api/cars' , ( request , responce ) => {
 });
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost::27017//Shani DataBase' ,{
+mongoose.connect('mongodb://localhost:27017//Shani DataBase' ,{
     useNewUrlParser : true ,
     useUnifiedTopology : true
 
