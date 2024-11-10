@@ -1,3 +1,3 @@
-const add = require('./Hello')
+const result = require('./Hello')
 
-console.log(add( 8 , 9 ));
+console.log(result( " The Addition of the a and b is :  ", 81 , 9 ));
