@@ -13,3 +13,5 @@ const fs = require("fs");
 
 //    }
 // });
+
+fs.appendFileSync('./File.text' , new Date().getDate().toLocaleString() );
