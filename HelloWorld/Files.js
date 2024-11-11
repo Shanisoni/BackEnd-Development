@@ -14,4 +14,7 @@ const fs = require("fs");
 //    }
 // });
 
-fs.appendFileSync('./File.text' , new Date().getDate().toLocaleString() );
+// fs.appendFileSync('./File.text' , new Date().getDate().toLocaleString() );
+// fs.appendFileSync('./File.text' , "Hello World"); 
+// console.log(fs.statSync('./File.text'));
+fs.mkdirSync('my-Docs' )
