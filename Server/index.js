@@ -1,8 +1,11 @@
 const http = require("http");
 const fs = require('fs');
+const url = require('url');
 
 const myServer = http.createServer((request, response) => {
     const log = `${Date.now()} : ${request.url} New Req Received\n`;
+    const myurl = url.parse(request.url, true);
+    console.log("Query Params: ", myurl);
 
     fs.appendFile("log.txt", log, (error) => {
         if(request.url === "/favicon.ico") {
@@ -19,4 +22,4 @@ const myServer = http.createServer((request, response) => {
 
 myServer.listen(8000, () => {
     console.log("Server Started");
-});
+}); 
