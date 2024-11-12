@@ -5,6 +5,9 @@ const myServer = http.createServer((request, response) => {
     const log = `${Date.now()} : ${request.url} New Req Received\n`;
 
     fs.appendFile("log.txt", log, (error) => {
+        if(request.url === "/favicon.ico") {
+            return response.end();
+        }
         if (error) {
             console.log("Error writing to file:", error);
         }
