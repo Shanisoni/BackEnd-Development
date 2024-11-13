@@ -3,6 +3,7 @@ const fs = require('fs');
 const url = require('url');
 
 const myServer = http.createServer((request, response) => {
+    
     if (request.url === "/favicon.ico") {
         return response.end();
     }
