@@ -6,9 +6,12 @@ const express = require('express');
 const app = express();
 
 const myServer = http.createServer((app));
-myServer.listen(8000, () => {
+// myServer.listen(8000, () => {
+//     console.log("Server Started");
+// }); 
+app.listen(8000, () => {
     console.log("Server Started");
-}); 
+});
 
 
 app.get( "/" , ( request , response) => {
