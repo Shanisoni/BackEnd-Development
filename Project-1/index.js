@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = 8000;
 const users = require('./MOCK_DATA.json')
+// Middleware
+app.use(express.urlencoded({ extended : false }));
 
 app.get('/api/users' , (req , res) => {
     res.json(users);
@@ -39,7 +41,7 @@ app.get('/users' , (req , res) => {
   });
 
   app.post("/api/users" , (req , res) => {
-
+    const body = req.body;
     return res.json( { status : 'Pending'});
    });
 
