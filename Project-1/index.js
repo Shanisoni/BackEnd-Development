@@ -16,13 +16,13 @@ app.route('/api/users:id').get((req , res) => {
 .patch((req , res) => {
     return res.json({ status : 'Pending'});
 })
-.delete('/api/users:id' , (req , res) => {
+.delete((req , res) => {
 
     return res.json( { status : 'Pending'});
 });
 
 // 
-app.post('/api/users' , (req , res) => {
+app.post("/api/users" , (req , res) => {
 
     return res.json( { status : 'Pending'});
 });
