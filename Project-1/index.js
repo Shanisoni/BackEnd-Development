@@ -3,7 +3,8 @@ const app = express();
 const PORT = 8000;
 const users = require('./MOCK_DATA.json')
 // Middleware
-app.use(express.urlencoded({ extended : false }));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());  // This is important for parsing JSON bodies
 
 app.get('/api/users' , (req , res) => {
     res.json(users);
@@ -42,6 +43,7 @@ app.get('/users' , (req , res) => {
 
   app.post("/api/users" , (req , res) => {
     const body = req.body;
+    console.log(body);
     return res.json( { status : 'Pending'});
    });
 
