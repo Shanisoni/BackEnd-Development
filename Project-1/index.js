@@ -10,6 +10,12 @@ app.get('/api/users' , (req , res) => {
     res.json(users);
 });
 
+app.post("/api/users" , (req , res) => {
+    const body = req.body;
+    console.log(body);
+    return res.json( { status : 'Pending'});
+   });
+
 // 
 app.route('/api/users:id').get((req , res) => {
     const id  = Number(req.params.id);
@@ -41,10 +47,6 @@ app.get('/users' , (req , res) => {
         res.send(html);
   });
 
-  app.post("/api/users" , (req , res) => {
-    const body = req.body;
-    console.log(body);
-    return res.json( { status : 'Pending'});
-   });
+  
 
 app.listen(PORT , ( ) => console.log('Server is running on port 8000'));
