@@ -22,10 +22,7 @@ app.route('/api/users:id').get((req , res) => {
 });
 
 // 
-app.post("/api/users" , (req , res) => {
 
-    return res.json( { status : 'Pending'});
-});
 // 
 // app.patch('/api/users:id' , (req , res) => {
 
@@ -40,5 +37,10 @@ app.get('/users' , (req , res) => {
         `;
         res.send(html);
   });
+
+  app.post("/api/users" , (req , res) => {
+
+    return res.json( { status : 'Pending'});
+   });
 
 app.listen(PORT , ( ) => console.log('Server is running on port 8000'));
