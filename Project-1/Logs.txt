@@ -1,1 +1,1 @@
-Request Method : GET , Request URL : undefined
+ 1731647644479 : GET : /api/users 1731647714378 : GET : /api/users/1001 1731647731475 : POST : /api/users/1001
