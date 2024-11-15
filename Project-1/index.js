@@ -13,6 +13,12 @@ app.use( ( req , res , next ) => {
     // return res.json({ msg : 'Hello from Middleware 1'});
     next();
 });
+app.use( (req , res , next ) => {
+    fs.appendFile('Logs.txt' , `Request Method : ${req.method} , Request URL : ${res.path}` , (err , data) => {
+        console.log('Logs are saved');
+        next();
+    })
+})
 
 app.use( ( req , res , next ) => {
     console.log('Middleware 2' , req.userName);
