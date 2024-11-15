@@ -27,7 +27,7 @@ app.use( ( req , res , next ) => {
     return res.send('Middleware 2');
     //  next();
 });
-
+ 
 app.get('/api/users' , (req , res) => {
     console.log("I am in route" , req.userName);
     res.json(users);
