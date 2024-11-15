@@ -7,6 +7,10 @@ const users = require('./MOCK_DATA.json')
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());  // This is important for parsing JSON bodies
 
+app.use( ( req , res , next ) => {
+    console.log('Middleware is running');
+});
+
 app.get('/api/users' , (req , res) => {
     res.json(users);
 });
