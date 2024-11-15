@@ -10,20 +10,22 @@ app.use(express.json());  // This is important for parsing JSON bodies
 app.use( ( req , res , next ) => {
     console.log(' Middleware 1');
     req.userName = 'Shani.dev';
-    return res.json({ msg : 'Hello from Middleware 1'});
-    next();
+    // return res.json({ msg : 'Hello from Middleware 1'});
+    
 });
 app.use( (req , res , next ) => {
-    fs.appendFile('Logs.txt' , `\n${Date.now()} ${req.ip}: ${req.method} : ${req.path}\n` , (err , data) => {
+    fs.appendFile('Logs.txt' , `\n${Date.now()} ${req.ip}: ${req.method} : ${req.path}\n` , 
+    (err , data) => {
         console.log('Logs are saved');
-        next();
+       
     })
+    next();
 })
 
 app.use( ( req , res , next ) => {
     console.log('Middleware 2' , req.userName);
     return res.send('Middleware 2');
-     next();
+    //  next();
 });
 
 app.get('/api/users' , (req , res) => {
