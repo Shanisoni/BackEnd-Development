@@ -9,7 +9,14 @@ app.use(express.json());  // This is important for parsing JSON bodies
 
 app.use( ( req , res , next ) => {
     console.log(' Hello from Middleware 1');
-    return res.json({ msg : 'Hello from Middleware 1'});
+    // return res.json({ msg : 'Hello from Middleware 1'});
+    next();
+});
+
+app.use( ( req , res , next ) => {
+    console.log('Middleware 1');
+    return res.json({ msg : 'Middleware 2'});
+    // next();
 });
 
 app.get('/api/users' , (req , res) => {
