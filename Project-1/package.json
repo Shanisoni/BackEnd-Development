@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "shani" : "nodemon"
+    "shani" : "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
