@@ -4,13 +4,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "shani" : "nodemon index.js"
+    "shani": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "express": "^4.21.1",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "react": "^18.3.1"
   }
 }
