@@ -14,7 +14,7 @@ app.use( ( req , res , next ) => {
     next();
 });
 app.use( (req , res , next ) => {
-    fs.appendFile('Logs.txt' , `\n${Date.now()} : ${req.method} : ${req.path}\n` , (err , data) => {
+    fs.appendFile('Logs.txt' , `\n${Date.now()} ${req.ip}: ${req.method} : ${req.path}\n` , (err , data) => {
         console.log('Logs are saved');
         next();
     })
