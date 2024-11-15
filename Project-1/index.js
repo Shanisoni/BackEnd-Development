@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());  // This is important for parsing JSON bodies
 
 app.use( ( req , res , next ) => {
-    console.log('Middleware is running');
+    console.log(' Hello from Middleware 1');
 });
 
 app.get('/api/users' , (req , res) => {
