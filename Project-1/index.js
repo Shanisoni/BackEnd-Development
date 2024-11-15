@@ -14,7 +14,7 @@ app.use( ( req , res , next ) => {
     next();
 });
 app.use( (req , res , next ) => {
-    fs.appendFile('Logs.txt' , `Request Method : ${req.method} , Request URL : ${res.path}` , (err , data) => {
+    fs.appendFile('Logs.txt' , ` ${Date.now} Request Method : ${req.method} , Request URL : ${req.path}` , (err , data) => {
         console.log('Logs are saved');
         next();
     })
