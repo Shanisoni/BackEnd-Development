@@ -7,7 +7,7 @@ const users = require('./MOCK_DATA.json')
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());  // This is important for parsing JSON bodies
-
+ 
 app.use( ( req , res , next ) => {
     console.log(' Middleware 1');
     req.userName = 'Shani.dev';
