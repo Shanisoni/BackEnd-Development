@@ -41,9 +41,10 @@ app.use((req, res, next) => {
 // Routes
 
 // Get all users
-app.get("/api/users", (req, res) => {
+app.get("/api/users2", (req, res) => {
   console.log("Fetching users", req.userName);
-  res.setHeader("Content-Type2", "ShaniSoni");
+  console.log("Fetching users2", req.headers);
+  res.setHeader("Content-Type2", "Shani");
   res.json(users);
 });
 
