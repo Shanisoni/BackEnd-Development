@@ -49,3 +49,39 @@
 1731860394950 ::1: GET : /api/users2
 
 1731860408175 ::1: GET : /api/users2
+
+1731860438751 ::1: GET : /api/users
+
+1731860449671 ::1: GET : /api/users
+
+1731860462882 ::1: GET : /api/users
+
+1731860482926 ::1: GET : /api/users
+
+1731860488141 ::1: GET : /api/users
+
+1731860492341 ::1: POST : /api/users
+
+1731860500060 ::1: POST : /api/users
+
+1731860519614 ::1: POST : /api/users
+
+1731860630715 ::1: POST : /api/users
+
+1731860637142 ::1: POST : /api/users
+
+1731860660770 ::1: GET : /api/users
+
+1731860669191 ::1: POST : /api/users
+
+1731860765469 ::ffff:127.0.0.1: GET : /api/users
+
+1731860765511 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1731860772393 ::1: GET : /api/users
+
+1731860783140 ::1: POST : /api/users
+
+1731860834631 ::1: POST : /api/users
+
+1731860990830 ::1: POST : /api/users

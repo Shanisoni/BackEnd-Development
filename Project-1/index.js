@@ -41,7 +41,7 @@ app.use((req, res, next) => {
 // Routes
 
 // Get all users
-app.get("/api/users2", (req, res) => {
+app.get("/api/users", (req, res) => {
   console.log("Fetching users", req.userName);
   console.log("Fetching users2", req.headers);
   res.setHeader("Content-Type2", "Shani");
@@ -52,13 +52,15 @@ app.get("/api/users2", (req, res) => {
 app.post("/api/users", (req, res) => {
   const body = req.body;
   users.push({ ...body, id: users.length + 1 });
-  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
+  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err , data ) => {
+    res.status(201).json({ status: "Success", id: users.length });
     if (err) {
       return res
-        .status(500)
+        // .status(2001)
         .json({ status: "Error", message: "Failed to save user data" });
     }
-    res.json({ status: "Success", id: users.length });
+    
+   
   });
 });
 
