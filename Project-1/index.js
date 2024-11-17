@@ -27,7 +27,7 @@ app.use((req, res, next) => {
         }
     });
     next();
-});
+}); 
 
 app.use((req, res, next) => {
     console.log('Middleware 2', req.userName);
@@ -39,6 +39,7 @@ app.use((req, res, next) => {
 // Get all users
 app.get('/api/users', (req, res) => {
     console.log("Fetching users", req.userName);
+    res.setHeader('Content-Type', 'Shani Soni');
     res.json(users);
 });
 

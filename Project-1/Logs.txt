@@ -3,3 +3,5 @@
 1731846251222 ::ffff:127.0.0.1: GET : /api/users
 
 1731846251283 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1731847229371 ::1: GET : /api/users
