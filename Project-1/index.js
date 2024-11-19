@@ -2,6 +2,36 @@ const express = require("express");
 const fs = require("fs");
 const app = express();
 const PORT = 8000;
+const mongoose = require("mongoose");
+
+
+// Schema 
+const userSchema = new mongoose.Schema({
+  firstname : {
+    type : String,
+    required : true,
+  },
+  LastName : {
+    type : String ,
+    required : true,
+
+  },
+  Emailid : {
+    type : String ,
+    unique : true ,
+    required : true
+
+  },
+  JobTitle : {
+    type : String ,
+
+  },
+  Gender :{
+    type : String
+  }
+}) ;
+const User = mongoose.model("user" , userSchema);
+mongoose.connect('')
 
 // Load mock user data
 const users = require("./MOCK_DATA.json");
