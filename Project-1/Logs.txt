@@ -147,3 +147,89 @@
 1732087953712 ::ffff:127.0.0.1: GET : /users
 
 1732087953797 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732110454381 ::1: POST : /api/users
+
+1732110495236 ::1: POST : /api/users
+
+1732110523710 ::ffff:127.0.0.1: GET : /api/users
+
+1732110538369 ::1: POST : /api/users
+
+1732110555433 ::1: POST : /api/users
+
+1732110646655 ::ffff:127.0.0.1: GET : /api/users
+
+1732110678499 ::1: POST : /api/users
+
+1732110722404 ::1: POST : /api/users
+
+1732110878333 ::1: POST : /api/users
+
+1732110914475 ::1: POST : /api/users
+
+1732110916907 ::1: POST : /api/users
+
+1732111059743 ::1: POST : /api/users
+
+1732111068970 ::ffff:127.0.0.1: GET : /api/users
+
+1732111076040 ::ffff:127.0.0.1: GET : /api/users
+
+1732111152960 ::1: POST : /api/users
+
+1732111160754 ::1: POST : /api/users
+
+1732111389209 ::1: POST : /api/users
+
+1732111473283 ::1: POST : /api/users
+
+1732111499258 ::1: POST : /api/users
+
+1732111861944 ::1: POST : /api/users
+
+1732113533658 ::1: POST : /api/users
+
+1732113543081 ::1: POST : /api/users
+
+1732113553545 ::1: POST : /api/users
+
+1732113580852 ::1: POST : /api/users
+
+1732113640284 ::1: POST : /api/users
+
+1732113644861 ::ffff:127.0.0.1: GET : /api/users
+
+1732113644911 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732113648220 ::ffff:127.0.0.1: GET : /api/users
+
+1732113680014 ::ffff:127.0.0.1: GET : /api/users
+
+1732113681203 ::ffff:127.0.0.1: GET : /api/users
+
+1732113681755 ::ffff:127.0.0.1: GET : /api/users
+
+1732113711155 ::ffff:127.0.0.1: GET : /api/users
+
+1732113734743 ::ffff:127.0.0.1: GET : /api/users
+
+1732113734766 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732113751378 ::ffff:127.0.0.1: GET : /api/users
+
+1732113751401 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732113817895 ::ffff:127.0.0.1: GET : /users
+
+1732113817945 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732113884460 ::1: POST : /api/users
+
+1732113956087 ::ffff:127.0.0.1: GET : /users
+
+1732114200485 ::ffff:127.0.0.1: GET : /api/users
+
+1732114200536 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732114209133 ::ffff:127.0.0.1: GET : /users
