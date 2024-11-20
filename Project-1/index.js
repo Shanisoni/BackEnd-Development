@@ -135,8 +135,9 @@ app
     res.json(user);
   })
 
-  .patch((req, res) => {
-    const id = Number(req.params.id);
+  .patch( async (req, res) => {
+    await User.findByIdAndUpdate
+    // const id = Number(req.params.id);
     const updatedData = req.body;
     const userIndex = users.findIndex((user) => user.id === id);
     if (userIndex === -1) {
