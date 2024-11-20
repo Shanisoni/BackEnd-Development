@@ -261,3 +261,25 @@
 1732126582227 ::ffff:127.0.0.1: GET : /users
 
 1732126582262 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732131511366 ::1: GET : /api/users
+
+1732131542581 ::1: PATCH : /api/users/673df4ac81a7224a316bc89e
+
+1732131706958 ::1: PATCH : /api/users/673df4ac81a7224a316bc89e
+
+1732131934543 ::ffff:127.0.0.1: GET : /users
+
+1732131934581 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732131945284 ::1: DELETE : /api/users/673df4ac81a7224a316bc89e
+
+1732131950951 ::ffff:127.0.0.1: GET : /users
+
+1732131950967 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732131972224 ::1: DELETE : /api/users/673df4e881a7224a316bc8a0
+
+1732131975360 ::ffff:127.0.0.1: GET : /users
+
+1732131975379 ::ffff:127.0.0.1: GET : /favicon.ico
