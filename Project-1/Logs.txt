@@ -111,3 +111,5 @@
 1732082234635 ::1: GET : /api/users
 
 1732082240943 ::1: POST : /api/users
+
+1732082361999 ::1: POST : /api/users
