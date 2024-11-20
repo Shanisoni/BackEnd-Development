@@ -31,7 +31,9 @@ const userSchema = new mongoose.Schema({
   }
 }) ;
 const User = mongoose.model("user" , userSchema);
-mongoose.connect('')
+mongoose.connect('mongodb://localhost:27017/Shani-app1')
+.then( ( ) =>   console.log(" MongoDB Connected ") )
+.catch( ( error) => console.log( " MonoDB Error" , error) )
 
 // Load mock user data
 const users = require("./MOCK_DATA.json");
