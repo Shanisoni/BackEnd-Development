@@ -251,3 +251,9 @@
 1732123141706 ::1: GET : /api/users
 
 1732123229256 ::1: GET : /api/users
+
+1732123733683 ::1: GET : /api/users673df4ac81a7224a316bc89e
+
+1732123742245 ::1: GET : /api/users
+
+1732123748852 ::1: GET : /api/users/673df4ac81a7224a316bc89e
