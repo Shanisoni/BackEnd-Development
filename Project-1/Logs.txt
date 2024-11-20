@@ -239,3 +239,15 @@
 1732116191056 ::1: POST : /api/users
 
 1732116196580 ::ffff:127.0.0.1: GET : /users
+
+1732120068043 ::1: POST : /api/users
+
+1732120119357 ::1: POST : /api/users
+
+1732120124492 ::ffff:127.0.0.1: GET : /users
+
+1732120124525 ::ffff:127.0.0.1: GET : /favicon.ico
+
+1732123141706 ::1: GET : /api/users
+
+1732123229256 ::1: GET : /api/users

@@ -78,11 +78,17 @@ app.use((req, res, next) => {
 // Routes
 
 // Get all users
-app.get("/api/users", (req, res) => {
+app.get("/api/users", async (req, res) => {
+
   console.log("Fetching users", req.userName);
+
   console.log("Fetching users2", req.headers);
+
   res.setHeader("Content-Type2", "Shani");
-  res.json(req.users);
+ 
+  const allDbUsers = await User.find();
+  return res.json(allDbUsers);
+
 });
 
 // Add a new user
@@ -119,14 +125,16 @@ app.post("/api/users", async (req, res) => {
 // Get, update, or delete a user by ID
 app
   .route("/api/users/:id")
-  .get((req, res) => {
-    const id = Number(req.params.id);
-    const user = users.find((user) => user.id === id);
+  .get( async (req, res) => {
+    // const id = Number(req.params.id);
+     const user = await User.findById(req.params.id);
+    // const user = users.find((user) => user.id === id);
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
     res.json(user);
   })
+
   .patch((req, res) => {
     const id = Number(req.params.id);
     const updatedData = req.body;
@@ -144,6 +152,7 @@ app
       res.json({ status: "Success", user: users[userIndex] });
     });
   })
+
   .delete((req, res) => {
     const id = Number(req.params.id);
     const userIndex = users.findIndex((user) => user.id === id);
