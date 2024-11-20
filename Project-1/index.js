@@ -29,16 +29,23 @@ const userSchema = new mongoose.Schema({
   Gender :{
     type : String
   }
-}) ;
+  
+  
+},
+{
+  timestamps : true}
+
+) ;
 
 const User = mongoose.model("user" , userSchema);
 
+// Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/Shani-app1')
 .then( ( ) =>   console.log(" MongoDB Connected ") )
 .catch( ( error) => console.log( " MonoDB Error" , error) )
 
 // Load mock user data
-const users = require("./MOCK_DATA.json");
+// const users = require("./MOCK_DATA.json");
 
 
 
@@ -167,14 +174,16 @@ app
   });
 
 // Render list of users in HTML
-app.get("/users", (req, res) => {
+app.get("/users", async (req, res) => {
+  const allDbUsers = await User.find();
   const html = `
-        <ul>
-            ${users
-              .map((user) => `<li>${user.first_name} ${user.last_name}</li>`)
-              .join("")}
-        </ul>
-    `;
+    <ul>
+        ${allDbUsers
+          .map((user) => `<li>${user.firstname} ${user.LastName} ${user.Emailid}</li>`)
+          .join("")}
+    </ul>
+`;
+
   res.send(html);
 });
 

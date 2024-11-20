@@ -113,3 +113,37 @@
 1732082240943 ::1: POST : /api/users
 
 1732082361999 ::1: POST : /api/users
+
+1732082944284 ::1: POST : /api/users
+
+1732082986105 ::1: POST : /api/users
+
+1732083189951 ::1: POST : /api/users
+
+1732086602734 ::ffff:127.0.0.1: GET : /api/users
+
+1732086661066 ::ffff:127.0.0.1: GET : /api/users
+
+1732086702485 ::ffff:127.0.0.1: GET : /users
+
+1732086741860 ::ffff:127.0.0.1: GET : /users
+
+1732086748761 ::ffff:127.0.0.1: GET : /users
+
+1732086754350 ::1: POST : /api/users
+
+1732086871605 ::1: POST : /api/users
+
+1732087030753 ::1: POST : /api/users
+
+1732087222329 ::1: POST : /api/users
+
+1732087227620 ::1: POST : /api/users
+
+1732087886607 ::1: POST : /api/users
+
+1732087923521 ::1: POST : /api/users
+
+1732087953712 ::ffff:127.0.0.1: GET : /users
+
+1732087953797 ::ffff:127.0.0.1: GET : /favicon.ico
