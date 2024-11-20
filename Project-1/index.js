@@ -136,14 +136,16 @@ app
   })
 
   .patch( async (req, res) => {
-    await User.findByIdAndUpdate
-    // const id = Number(req.params.id);
+    await User.findByIdAndUpdate( req.params.id , {last_name : "Shanppppppi"} );
+    const id = Number(req.params.id);
     const updatedData = req.body;
     const userIndex = users.findIndex((user) => user.id === id);
+    return res.json(user)
     if (userIndex === -1) {
       return res.status(404).json({ error: "User not found" });
     }
     users[userIndex] = { ...users[userIndex], ...updatedData };
+
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
       if (err) {
         return res

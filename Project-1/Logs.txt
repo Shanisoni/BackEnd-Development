@@ -257,3 +257,7 @@
 1732123742245 ::1: GET : /api/users
 
 1732123748852 ::1: GET : /api/users/673df4ac81a7224a316bc89e
+
+1732126582227 ::ffff:127.0.0.1: GET : /users
+
+1732126582262 ::ffff:127.0.0.1: GET : /favicon.ico
