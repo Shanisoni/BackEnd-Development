@@ -85,3 +85,21 @@
 1731860834631 ::1: POST : /api/users
 
 1731860990830 ::1: POST : /api/users
+
+1732081539594 ::1: GET : /api/users
+
+1732081685268 ::1: GET : /api/users
+
+1732081691468 ::1: GET : /api/users
+
+1732081718848 ::1: GET : /api/users
+
+1732081824607 ::1: GET : /api/users
+
+1732081836427 ::1: POST : /api/users
+
+1732081875252 ::1: POST : /api/users
+
+1732081878612 ::1: POST : /api/users
+
+1732081879003 ::1: POST : /api/users

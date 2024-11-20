@@ -30,7 +30,9 @@ const userSchema = new mongoose.Schema({
     type : String
   }
 }) ;
+
 const User = mongoose.model("user" , userSchema);
+
 mongoose.connect('mongodb://localhost:27017/Shani-app1')
 .then( ( ) =>   console.log(" MongoDB Connected ") )
 .catch( ( error) => console.log( " MonoDB Error" , error) )
@@ -84,19 +86,39 @@ app.get("/api/users", (req, res) => {
 });
 
 // Add a new user
-app.post("/api/users", (req, res) => {
+app.post("/api/users", async (req, res) => {
   const body = req.body;
-  users.push({ ...body, id: users.length + 1 });
-  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err , data ) => {
-    res.status(201).json({ status: "Success", id: users.length });
-    if (err) {
-      return res
-        // .status(2001)
-        .json({ status: "Error", message: "Failed to save user data" });
-    }
+  if(
+    !body ||
+    !body.first_name ||
+    !body.last_name ||
+    !body.email||
+    !body.JobTitle||
+    !body.Gender
+  ){
+    return res.status(400).json({ error: "Please provide all required fields" });
+  }
+   const result = await User.create({
+    firstname : body.first_name,
+    LastName : body.last_name,
+    Emailid : body.email,
+    JobTitle : body.JobTitle,
+    Gender : body.Gender
+
+  });
+
+  return res.status(201).json({ status: "Success Ho gya ", id: result._id}); 
+  // users.push({ ...body, id: users.length + 1 });
+  // fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err , data ) => {
+  //   res.status(201).json({ status: "Success", id: users.length });
+  //   if (err) {
+  //     return res
+  //       // .status(2001)
+  //       .json({ status: "Error", message: "Failed to save user data" });
+  //   }
     
    
-  });
+  // });
 });
 
 // Get, update, or delete a user by ID
