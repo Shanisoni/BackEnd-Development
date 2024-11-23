@@ -122,6 +122,8 @@ app.post("/api/users", async (req, res) => {
   // });
 });
 
+
+
 // Get, update, or delete a user by ID
 app
   .route("/api/users/:id")
@@ -134,7 +136,6 @@ app
     }
     res.json(user);
   })
-
   .patch( async (req, res) => {
     
     await User.findByIdAndUpdate( req.params.id , {last_name : "Shanppppppi"} );
@@ -166,6 +167,7 @@ app
     //   return res.status(404).json({ error: "User not found" });
     // }
 
+
     users.splice(userIndex, 1);
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
       if (err) {
@@ -176,6 +178,7 @@ app
       res.json({ status: "Success", message: "User deleted successfully" });
     });
   });
+ 
 
 // Render list of users in HTML
 app.get("/users", async (req, res) => {
@@ -193,6 +196,7 @@ app.get("/users", async (req, res) => {
 
   res.send(html);
 });
+
 
 // Start the server
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
