@@ -191,7 +191,9 @@ app.get("/users", async (req, res) => {
               `<li>${user.first_name} ${user.last_name} ${user.email}</li>`
           )
           .join("")}
+
     </ul>
+    
 `;
 
   res.send(html);
