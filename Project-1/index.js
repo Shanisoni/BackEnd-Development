@@ -29,17 +29,7 @@ app.use(express.json()); // This is important for parsing JSON bodies
 
 router.use((req, res, next) => {
   // Log request details to a file
-  fs.appendFile(
-    "Logs.txt",
-    `\n${Date.now()} ${req.ip}: ${req.method} : ${req.path}\n`,
-    (err) => {
-      if (err) {
-        console.error("Error saving logs:", err);
-      } else {
-        console.log("Logs are saved");
-      }
-    }
-  );
+ 
   next();
 });
 
