@@ -2,6 +2,12 @@ const express = require("express");
 const fs = require("fs");
 const app = express();
 const PORT = 8000;
+const userRouter = require("./routes/users");
+
+const {connectMongoDb} = require('./connection');
+
+connectMongoDb("mongodb://localhost:27017/Shani-app1");
+
 
 
 
@@ -9,10 +15,10 @@ const PORT = 8000;
 const User = mongoose.model("user", userSchema);
 
 // Connect to MongoDB
-mongoose
-  .connect("mongodb://localhost:27017/Shani-app1")
-  .then(() => console.log(" MongoDB Connected "))
-  .catch((error) => console.log(" MonoDB Error", error));
+// mongoose
+//   .connect
+//   .then(() => console.log(" MongoDB Connected "))
+//   .catch((error) => console.log(" MonoDB Error", error));
 
 // Load mock user data
 // const users = require("./MOCK_DATA.json");
@@ -21,7 +27,25 @@ mongoose
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); // This is important for parsing JSON bodies
 
-// Custom Middleware
+router.use((req, res, next) => {
+  // Log request details to a file
+  fs.appendFile(
+    "Logs.txt",
+    `\n${Date.now()} ${req.ip}: ${req.method} : ${req.path}\n`,
+    (err) => {
+      if (err) {
+        console.error("Error saving logs:", err);
+      } else {
+        console.log("Logs are saved");
+      }
+    }
+  );
+  next();
+});
+
+
+// Routes 
+app.use("/user" , userRouter)
 
 
 

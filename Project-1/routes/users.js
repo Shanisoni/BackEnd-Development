@@ -4,38 +4,39 @@ const router = express.Router();
 
 
 // Render list of users in HTML
-router.get("/users", async (req, res) => {
-    const allDbUsers = await User.find();
-    const html = `
-      <ul>
-          ${allDbUsers
-            .map(
-              (user) =>
-                `<li>${user.first_name} ${user.last_name} ${user.email}</li>`
-            )
-            .join("")}
+// router.get("/users", async (req, res) => {
+//     const allDbUsers = await User.find();
+//     const html = `
+//       <ul>
+//           ${allDbUsers
+//             .map(
+//               (user) =>
+//                 `<li>${user.first_name} ${user.last_name} ${user.email}</li>`
+//             )
+//             .join("")}
   
-      </ul>
+//       </ul>
       
-  `;
+//   `;
   
-    res.send(html);
-  });
+//     res.send(html);
+//   });
+
 
   // Get all users
-router.get("/api/users", async (req, res) => {
-    console.log("Fetching users", req.userName);
-    console.log("Fetching users2", req.headers);
-    res.setHeader("Content-Type2", "Shani");
-   
+router.get("/", async (req, res) => {
+    // console.log("Fetching users", req.userName);
+    // console.log("Fetching users2", req.headers);
+    // res.setHeader("Content-Type2", "Shani");
     const allDbUsers = await User.find();
     return res.json(allDbUsers);
   
   });
 
+
   // Get, update, or delete a user by ID
 router
-.route("/api/users/:id")
+.route("/:id")
 .get( async (req, res) => {
   // const id = Number(req.params.id);
    const user = await User.findById(req.params.id);
@@ -89,39 +90,24 @@ router
 });
 
 
-router.use((req, res, next) => {
-  console.log("Middleware 1");
-  req.userName = "Shani.dev";
-  next(); // Continue to the next middleware
-});
+// router.use((req, res, next) => {
+//   console.log("Middleware 1");
+//   req.userName = "Shani.dev";
+//   next(); // Continue to the next middleware
+// });
 
-router.use((req, res, next) => {
-  // Log request details to a file
-  fs.appendFile(
-    "Logs.txt",
-    `\n${Date.now()} ${req.ip}: ${req.method} : ${req.path}\n`,
-    (err) => {
-      if (err) {
-        console.error("Error saving logs:", err);
-      } else {
-        console.log("Logs are saved");
-      }
-    }
-  );
-  next();
-});
 
-router.use((req, res, next) => {
-  console.log("Middleware 2", req.userName);
-  next(); // Continue to the next middleware or route handler
-});
+// router.use((req, res, next) => {
+//   console.log("Middleware 2", req.userName);
+//   next(); // Continue to the next middleware or route handler
+// });
 
 // Routes
 
 
 
 // Add a new user
-router.post("/api/users", async (req, res) => {
+router.post("/", async (req, res) => {
   console.log("Adding a new user");
   try {
     const { first_name, last_name, email, JobTitle, Gender } = req.body;
