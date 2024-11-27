@@ -25,12 +25,12 @@ const router = express.Router();
 
   // Get all users
 router.get("/", async (req, res) => {
+  const allDbUsers = await User.find();
+  return res.json(allDbUsers);
+  
     // console.log("Fetching users", req.userName);
     // console.log("Fetching users2", req.headers);
-    // res.setHeader("Content-Type2", "Shani");
-    const allDbUsers = await User.find();
-    return res.json(allDbUsers);
-  
+    // res.setHeader("Content-Type2", "Shani");  
   });
 
 
