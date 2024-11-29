@@ -6,7 +6,7 @@ async function handlwGetAllUser( req , res) {
     
 }
 
-async function getUserById( req , res , next) {
+async function handlegetUserById( req , res , next) {
 
     const user = await User.findById(req.params.id);
     // const user = users.find((user) => user.id === id);
@@ -17,7 +17,39 @@ async function getUserById( req , res , next) {
     
 }
 
+async function handleUpdateUserById( req , res , next){
+    await User.findByIdAndUpdate( req.params.id , {last_name : "Shanppppppi"} ); 
+    return res.json( {status : "Success" , message : "User Updated"} );
+}
+
+async function handleDeleteUserById( req , res , next){
+    await User.findByIdAndDelete(req.params.id);
+  return res.json({ status: "Success", message: "User deleted successfully" });
+}
+
+async function handleCreateUserById( req , res , next){
+    try {
+        const { first_name, last_name, email, JobTitle, Gender } = req.body;
+        console.log(first_name, last_name, email, JobTitle, Gender);
+        const result = await User.create({
+          first_name,
+          last_name,
+          email,
+          JobTitle,
+          Gender,
+        });
+      } catch (error) {
+        console.log(error);
+        return res.status(500).json({ status: "Error", message: error });
+      }
+    
+      return res.status(201).json({ status: "Success Ho gya "  , id : result._id});
+}
+
 module.exports = {
     handlwGetAllUser,
-    getUserById,
+    handlegetUserById,
+    handleUpdateUserById,
+    handleDeleteUserById,
+    handleCreateUserById,
 }

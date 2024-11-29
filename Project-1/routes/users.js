@@ -1,71 +1,56 @@
 const express = require("express")
 const router = express.Router();
-const {handlwGetAllUser, getUserById} = require("../controllers/user");
+const {handlwGetAllUser,
+      handlegetUserById,
+      handleUpdateUserById,
+      handleDeleteUserById ,
+      handleCreateUserById
+      } = require("../controllers/user");
 
 
-router.get("/", handlwGetAllUser );
+
+router.route("/").get(handlwGetAllUser).post(handleCreateUserById);
 
 router
-.route("/:id")
-.get( getUserById )
-.patch( async (req, res) => {
-  
-  await User.findByIdAndUpdate( req.params.id , {last_name : "Shanppppppi"} );
- 
-  return res.json( {status : "Success" , message : "User Updated"} );
-
-  users[userIndex] = { ...users[userIndex], ...updatedData };
-
-  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ status: "Error", message: "Failed to update user data" });
-    }
-    res.json({ status: "Success", user: users[userIndex] });
-  });
-})
-
-.delete( async (req, res) => {
-  await User.findByIdAndDelete(req.params.id);
-  return res.json({ status: "Success", message: "User deleted successfully" });
- 
+.route("/:id")  
+.get( handlegetUserById )
+.patch( handleUpdateUserById)
+.delete( handleDeleteUserById)
+.create( handleCreateUserById)
+;
 
 
-  users.splice(userIndex, 1);
-  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
-    if (err) {
-      return res
-        .status(500)
-        .json({ status: "Error", message: "Failed to delete user data" });
-    }
-    res.json({ status: "Success", message: "User deleted successfully" });
-  });
-});
-
-// Add a new user
-router.post("/", async (req, res) => {
-  console.log("Adding a new user");
-  try {
-    const { first_name, last_name, email, JobTitle, Gender } = req.body;
-    console.log(first_name, last_name, email, JobTitle, Gender);
-    const result = await User.create({
-      first_name,
-      last_name,
-      email,
-      JobTitle,
-      Gender,
-    });
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ status: "Error", message: error });
-  }
-
-  return res.status(201).json({ status: "Success Ho gya " });
-
-});
 
 module.exports = router;
+
+
+
+
+// users[userIndex] = { ...users[userIndex], ...updatedData };
+
+//   fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
+//     if (err) {
+//       return res
+//         .status(500)
+//         .json({ status: "Error", message: "Failed to update user data" });
+//     }
+//     res.json({ status: "Success", user: users[userIndex] });
+//   });
+
+//   users.splice(userIndex, 1);
+//   fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
+//     if (err) {
+//       return res
+//         .status(500)
+//         .json({ status: "Error", message: "Failed to delete user data" });
+//     }
+//     res.json({ status: "Success", message: "User deleted successfully" });
+//   });
+
+// Add a new user
+
+
+
 
 
 // Render list of users in HTML
