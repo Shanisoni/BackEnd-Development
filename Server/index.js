@@ -2,13 +2,14 @@ const http = require("http");
 const fs = require('fs');
 const url = require('url');
 const express = require('express');
-
 const app = express();
 
 const myServer = http.createServer((app));
+
 // myServer.listen(8000, () => {
 //     console.log("Server Started");
 // }); 
+
 app.listen(8000, () => {
     console.log("Server Started");
 });
