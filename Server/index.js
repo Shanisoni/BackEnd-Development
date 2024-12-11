@@ -3,7 +3,6 @@ const fs = require('fs');
 const url = require('url');
 const express = require('express');
 const app = express();
-
 const myServer = http.createServer((app));
 
 // myServer.listen(8000, () => {
@@ -14,10 +13,12 @@ app.listen(8000, () => {
     console.log("Server Started");
 });
 
+
  
 app.get( "/" , ( request , response) => {
    return response.send("Hello From Home Page");
 });
+
 
 
 app.get( '/about' , (request , response) => { 
