@@ -1,22 +1,39 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const fs = require("fs");
 const app = express();
 const PORT = 8000;
-const  {logReqRes} =  require("./middleware");  
-const userRouter = require("./routes/users");
 
+const { logReqRes } = require("./middleware");
+const userRouter = require("./routes/user");
+const { connectMongoDb } = require("./connection");
 
-const {connectMongoDb} = require('./connection');
-
+// Connect to MongoDB
 connectMongoDb("mongodb://localhost:27017/Shani-app1");
-const User = mongoose.model("user", userSchema);
 
+// Import the User model
+const User = require("./models/user");
+
+// Middleware
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json()); // This is important for parsing JSON bodies
+app.use(express.json()); // Parses JSON bodies
+app.use(logReqRes("log.txt"));
 
-app.use( logReqRes("log.txt")) ;
-app.use("/user" , userRouter)
+// Routes
+app.use("/user", userRouter);
 
+// Error-handling Middleware (optional, improves robustness)
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ message: "Something went wrong!" });
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+ 
 
 // Connect to MongoDB
 // mongoose

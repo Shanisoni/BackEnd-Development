@@ -1,9 +1,15 @@
 const mongoose = require("mongoose");
 
-async function connectMongoDb(url){
-    return mongoose.connect(url);
+async function connectMongoDb(uri) {
+    try {
+        await mongoose.connect(uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log("Connected to MongoDB");
+    } catch (err) {
+        console.error("MongoDB connection error:", err);
+    }
 }
 
-module.exports = { 
-    connectMongoDb,
-};
+module.exports = { connectMongoDb };

@@ -1,27 +1,27 @@
-const express = require("express")
+const express = require("express");
 const router = express.Router();
-const {handlwGetAllUser,
-      handlegetUserById,
-      handleUpdateUserById,
-      handleDeleteUserById ,
-      handleCreateUserById
-      } = require("../controllers/user");
 
+const {
+    handlwGetAllUser,
+    handlegetUserById,
+    handleUpdateUserById,
+    handleDeleteUserById,
+    handleCreateUserById
+} = require("../controllers/user");
 
+// Routes
+router.route("/")
+    .get(handlwGetAllUser)        // Handle GET requests to "/"
+    .post(handleCreateUserById);  // Handle POST requests to "/"
 
-router.route("/").get(handlwGetAllUser).post(handleCreateUserById);
+router.route("/:id")
+    .get(handlegetUserById)       // Handle GET requests to "/:id"
+    .patch(handleUpdateUserById)  // Handle PATCH requests to "/:id"
+    .delete(handleDeleteUserById); // Handle DELETE requests to "/:id"
 
-router
-.route("/:id")  
-.get( handlegetUserById )
-.patch( handleUpdateUserById)
-.delete( handleDeleteUserById)
-.create( handleCreateUserById)
-;
-
-
-
+// Export the router
 module.exports = router;
+
 
 
 
