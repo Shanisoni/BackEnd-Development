@@ -9,6 +9,7 @@ const {
     handleCreateUserById
 } = require("../controllers/user");
 
+
 // Routes
 router.route("/")
     .get(handlwGetAllUser)        // Handle GET requests to "/"
