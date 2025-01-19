@@ -6,6 +6,8 @@ async function handlwGetAllUser( req , res) {
     
 }
 
+
+
 async function handlegetUserById( req , res , next) {
 
     const user = await User.findById(req.params.id);
@@ -17,15 +19,21 @@ async function handlegetUserById( req , res , next) {
     
 }
 
+
+
 async function handleUpdateUserById( req , res , next){
     await User.findByIdAndUpdate( req.params.id , {last_name : "Shanppppppi"} ); 
     return res.json( {status : "Success" , message : "User Updated"} );
 }
 
+
+
 async function handleDeleteUserById( req , res , next){
     await User.findByIdAndDelete(req.params.id);
   return res.json({ status: "Success", message: "User deleted successfully" });
 }
+
+
 
 async function handleCreateUserById( req , res , next){
     try {
