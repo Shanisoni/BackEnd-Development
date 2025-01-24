@@ -14,6 +14,8 @@ connectMongoDb("mongodb://localhost:27017/Shani-app1");
 // Import the User model
 const User = require("./models/user");
 
+
+
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); // Parses JSON bodies
