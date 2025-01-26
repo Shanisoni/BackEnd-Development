@@ -10,7 +10,6 @@ const { connectMongoDb } = require("./connection");
 
 // Connect to MongoDB
 connectMongoDb("mongodb://localhost:27017/Shani-app1");
-
 // Import the User model
 const User = require("./models/user");
 
