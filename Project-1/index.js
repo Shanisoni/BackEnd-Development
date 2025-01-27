@@ -46,14 +46,8 @@ app.listen(PORT, () => {
 // const users = require("./MOCK_DATA.json");
 
 // Middleware
-
-
-
   // Log request details to a file
  
- 
-
-
 // router.use((req, res, next) => {
 //   // Log request details to a file
  
