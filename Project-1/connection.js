@@ -17,6 +17,5 @@ module.exports = { connectMongoDb };
 
 // async function connectMongoDb(uri) {
 //     try {
-//         await mongoose.connect(uri, {
-//             useNewUrlParser: true,
+
 //             useUnifiedTopology: true,
